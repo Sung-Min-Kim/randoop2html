@@ -192,6 +192,15 @@ for i in data2['descriptions']:
         cnt+=1
         data3.append(copy.deepcopy(i))
 
-html = json2html.convert(json = data3)
-print(cnt)
-print(html)
+
+trial_num = sys.argv[4]
+bug_num = sys.argv[5]
+
+
+filename = "bug"+bug_num+"-"+"try"+trial_num+"-"+method_key+".json"
+with open(filename, 'w') as outfile:
+    json.dump(data3, outfile, indent=4)
+# html = json2html.convert(json = data3)
+# print(cnt)
+# print(html)
+
